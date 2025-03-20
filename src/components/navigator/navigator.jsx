@@ -1,5 +1,5 @@
 import "./navigator.css";
-import { useState } from 'react'
+import routes from './routes';
 
 function Navigator() {
     return (
