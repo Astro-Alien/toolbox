@@ -1,5 +1,5 @@
 import "./navigator.css";
-import routes from './routes';
+import {routes} from './routes.js';
 
 function Navigator() {
     return (
