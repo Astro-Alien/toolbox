@@ -1,7 +1,7 @@
 export const routes = {
-    welcome: {
-        component: 'Welcome',
-        name: 'welcome',
-        path: 'welcome/welcome',
+    home: {
+        component: 'Home',
+        name: 'home',
+        path: 'home/home',
     }
 };

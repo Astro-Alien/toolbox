@@ -1,4 +1,4 @@
-function Welcome() {
+function Home() {
   return (
     <>
         <h1>Welcome To My Toolbox</h1>
@@ -6,4 +6,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Home;

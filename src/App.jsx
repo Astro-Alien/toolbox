@@ -1,6 +1,6 @@
 import { useState , useEffect} from 'react'
 import NavigationBar from './components/navigation-bar/navigation-bar.jsx'
-import Welcome from './components/welcome/welcome.jsx'
+import Home from './components/home/home.jsx'
 import './App.css'
 
 function App() {
@@ -20,13 +20,13 @@ function App() {
  
   return (
     <>
-      <NavigationBar defaultTab="welcome"/>
+      <NavigationBar defaultTab="home"/>
       <header>
          <h1>Toolbox</h1>
       </header>
 
       <main>
-        {Component ? <Component /> : <Welcome />}
+        {Component ? <Component /> : <Home />}
       </main>
 
       <footer>&copy; charleslemmert-toolbox </footer>
