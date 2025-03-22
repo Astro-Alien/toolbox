@@ -22,14 +22,14 @@ function App() {
     <>
       <NavigationBar defaultTab="welcome"/>
       <header>
-         <h1>header</h1>
+         <h1>Toolbox</h1>
       </header>
 
       <main>
         {Component ? <Component /> : <Welcome />}
       </main>
 
-      <footer>&copy; charleslemmert-toolbox</footer>
+      <footer>&copy; charleslemmert-toolbox </footer>
     </>
   )
 }
