@@ -3,8 +3,9 @@
     grid-row: 1 / 4;
     z-index: 2;
     padding: 0.5rem;
-    background-color: #242424;
-    border: 1px solid #6C6C6C;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    background: #6c6c6c;
 }
 
   .navigation-bar_navigation-container {
@@ -29,7 +30,7 @@
   .navigation-bar li {
     display: flex;
     height: 2.5rem;
-    border: 1px solid #6C6C6C;
+    border: 1px solid #242424;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     align-items: center;
@@ -37,6 +38,10 @@
     list-style: none;
   }
 
+  .navigation-bar li:hover {
+    background: #242424;
+    
+  }
   .navigation-bar li a {
     text-decoration: none;
     color: #FFFFFF;
@@ -44,6 +49,6 @@
   }
 
   #root:has(.navigation-bar[data-collapse="true"]) {
-    grid-template-columns: 3.5rem 1fr;
+    grid-template-columns: 4.5rem 1fr;
 }
 

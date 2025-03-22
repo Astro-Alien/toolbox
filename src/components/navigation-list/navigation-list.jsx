@@ -32,7 +32,7 @@ export default class NavigationList extends Component{
                 {
                     Object.values(routes).map((route, index) => {
                         return <li key={route.name}>
-                                    <a key={route.name} onClick={this.#clickHandler} data-key={route.name}>{route.component}</a>
+                                    <a key={route.name} href={route.name} onClick={this.#clickHandler} data-key={route.name}>{route.component}</a>
                                </li>
                     })
                 }
