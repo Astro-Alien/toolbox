@@ -1,5 +1,6 @@
 import { useState , useEffect} from 'react'
 import NavigationBar from './components/navigation-bar/navigation-bar.jsx'
+import Welcome from './components/welcome/welcome.jsx'
 import './App.css'
 
 function App() {
@@ -11,7 +12,6 @@ function App() {
     };
 
     globalThis.eventEmitter.on('navigate', navigationHandler);
-
     return () => {
       globalThis.eventEmitter.remove('navigate', navigationHandler);  
     }
@@ -20,13 +20,13 @@ function App() {
  
   return (
     <>
-      <NavigationBar />
+      <NavigationBar defaultTab="welcome"/>
       <header>
          <h1>header</h1>
       </header>
 
       <main>
-        {Component ? <Component /> : <h1>Loading...</h1>}
+        {Component ? <Component /> : <Welcome />}
       </main>
 
       <footer>&copy; charleslemmert-toolbox</footer>

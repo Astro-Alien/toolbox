@@ -5,17 +5,17 @@ import {Component,lazy} from "react";
 export default class NavigationList extends Component{
     #clickHandler;
     #currentTab;
-    constructor(props) {
-        super(props);
-        this.#clickHandler = this.clickHandler.bind(this);
-    }
 
     clickHandler(event) { 
         const element = event.target;
-        const pathName = element.dataset.path;
+        const pathName = element.dataset.key;
 
         if (pathName === this.#currentTab) return;
 
+        this.emitNavigateEvent(pathName); 
+    }
+
+    emitNavigateEvent(pathName) {
         const path = `./../${routes[pathName]?.path}`;
         const component = lazy(()=> import(path));
         globalThis.eventEmitter.emit('navigate', {detail: {component: component}});
@@ -23,21 +23,19 @@ export default class NavigationList extends Component{
     }
 
     render() {
+        this.#clickHandler = this.clickHandler.bind(this);
+        this.#currentTab = this.props.defaultTab.defaultTab;
+
         return (
            <>
               <ul className="navigator_ul">
-                <li>
-                    <a href="#" onClick={this.#clickHandler} data-path="welcome">List item 1</a>
-                </li>
-                <li>
-                    <a href="#" onClick={this.#clickHandler}>List item 2</a>
-                </li>
-                <li>
-                    <a href="#" onClick={this.#clickHandler}>List item 3</a>
-                </li>
-                <li>
-                    <a href="#" onClick={this.#clickHandler}>List item 4</a>
-                </li>
+                {
+                    Object.values(routes).map((route, index) => {
+                        return <li key={route.name}>
+                                    <a key={route.name} onClick={this.#clickHandler} data-key={route.name}>{route.component}</a>
+                               </li>
+                    })
+                }
               </ul>
            </>
         );
