@@ -8,6 +8,12 @@ function App() {
     <div className="flex">
       <NavigationBar />
     </div>
+    <main className="flex justify-center content-center
+                    h-[100%] w-[100%]
+                    bg-champagne
+                    text-blue-dianne" >
+          <Home />            
+    </main>
     </>
   );
 }
