@@ -1,22 +1,35 @@
 import React, { useRef } from "react";
-import "./navigation-bar.css";
+// import "./navigation-bar.css";
 import NavigationList from '../navigation-list/navigation-list.jsx'
+import {FaFire, FaHome, FaRegListAlt } from 'react-icons/fa'
 
 
 function NavigationBar(defaultTab) {
-    const grandparentRef = useRef(null);
    
     const clickHandler = (event) => {
-        grandparentRef.current.dataset.collapse = grandparentRef.current.dataset.collapse === "true" ? false : true;
+    
     }
 
     return (
-        <aside className="navigation-bar" data-collapse="true" ref={grandparentRef}>
-            <nav className="navigation-bar_navigation-container">
-                <button onClick={clickHandler} className="navigation-bar_button" id="btn-menu">Back</button> 
-                <NavigationList defaultTab={defaultTab}/>
-            </nav>
-        </aside>
+        <div className="fixed top-0 
+                        left-0 h-screen 
+                        w-16 m-0 p-0
+                        flex flex-col
+                        bg-blue-dianne
+                        text-champagne
+                        shadow-lg" data-collapse="true">
+           
+           <SideBarIcons icon={<FaHome size="28"/>} />
+           <SideBarIcons icon={<FaRegListAlt  size="28"/>} />
+        </div>
     );
 }
 export default NavigationBar;
+
+const SideBarIcons = ({icon}) => {
+    return ( 
+        <div  className="sidebar-icon">
+            {icon}
+        </div>
+    )
+}
