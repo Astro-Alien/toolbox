@@ -3,17 +3,23 @@ import {Component,lazy} from "react";
 
 import SideBarIcons from "./side-bar-icons.jsx";
 
-export default class NavigationList extends Component{
-    render() {
-        
-        return (
-           <>
-            {
-                Object.values(routes).map((route, index) => {
-                    return <SideBarIcons key={route.name}  icon={route.icon} tooltip={route.name}/>
-                })
-            }
-           </>
-        );
+function NavigationList() {
+
+    const clickHandler = (event) => {
+        console.log(`Navigating to ${path}`);
     }
+
+    return (
+        <>
+        {
+            Object.values(routes).map((route, index) => {
+                return  <li className="list-none" key={route.name} data-path={route.name} onClick={clickHandler}>
+                             <SideBarIcons key={route.name} icon={route.icon} tooltip={route.name}/>
+                        </li>
+            })
+        }
+        </>
+    );
 }
+
+export default NavigationList;
