@@ -6,7 +6,7 @@ import SideBarIcons from "./side-bar-icons.jsx";
 function NavigationList() {
 
     const clickHandler = (event) => {
-        console.log(`Navigating to ${path}`);
+        console.log(`Navigating to ??`);
     }
 
     return (
