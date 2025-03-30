@@ -1,15 +1,8 @@
 import React, { useRef } from "react";
-// import "./navigation-bar.css";
 import NavigationList from '../navigation-list/navigation-list.jsx'
-import {FaFire, FaHome, FaRegListAlt } from 'react-icons/fa'
-
 
 function NavigationBar(defaultTab) {
    
-    const clickHandler = (event) => {
-    
-    }
-
     return (
         <div className="fixed top-0 
                         left-0 h-screen 
@@ -19,17 +12,8 @@ function NavigationBar(defaultTab) {
                         text-champagne
                         shadow-lg" data-collapse="true">
            
-           <SideBarIcons icon={<FaHome size="28"/>} />
-           <SideBarIcons icon={<FaRegListAlt  size="28"/>} />
+           <NavigationList/>
         </div>
     );
 }
 export default NavigationBar;
-
-const SideBarIcons = ({icon}) => {
-    return ( 
-        <div  className="sidebar-icon">
-            {icon}
-        </div>
-    )
-}

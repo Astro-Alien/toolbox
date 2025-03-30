@@ -14,3 +14,20 @@ html,body {
   --color-blue-dianne: #1D4853;
   --color-champagne: #FAF0C8;
 }
+
+.sidebar-icon {
+  @apply relative flex items-center justify-center
+         h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
+       hover:bg-champagne hover:text-blue-dianne
+       rounded-3xl hover:rounded-xl bg-[#214e5a]
+       transition-all duration-300 ease-linear;
+}
+
+.sidebar-tooltip {
+  @apply absolute w-max text-xs p-2 m-2 
+         bg-blue-dianne text-champagne 
+         font-bold rounded-lg shadow-lg z-10 
+         left-14 scale-0 group-hover:scale-100
+         transition-all duration-300 origin-left;
+}
+
