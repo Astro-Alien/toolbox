@@ -1,5 +1,5 @@
-import { routes } from './../routes.js';
-import { Suspense } from "react";
+import { routes } from '../routes.js';
+import { Suspense , lazy} from "react";
 import { Routes, Route } from "react-router-dom";
 
 function RouterControler() {
@@ -8,7 +8,7 @@ function RouterControler() {
             <Routes>
                 {
                     Object.values(routes).map((route, index) => {
-                        const Component = route.component;
+                        const Component = lazy(() => import(`${route.fixed_path}`));
                         return <Route key={index} path={route.path} element={<Component />} />;
                     })
                 }

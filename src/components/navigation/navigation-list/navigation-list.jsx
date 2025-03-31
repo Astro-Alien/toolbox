@@ -1,4 +1,4 @@
-import { routes } from './../routes.js';
+import { routes } from '../routes.js';
 import { Link } from "react-router-dom";
 import SideBarIcons from "../side-bar-icons/side-bar-icons.jsx";
 
