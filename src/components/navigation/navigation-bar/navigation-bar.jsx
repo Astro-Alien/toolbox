@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
-import NavigationList from '../navigation-list/navigation-list.jsx'
+import NavigationList from './../navigation-list/navigation-list.jsx';
+import RouterControler from './../router-controler/router-controler.jsx';
+import { BrowserRouter } from "react-router-dom";
 
 function NavigationBar(defaultTab) {
    
@@ -11,8 +13,7 @@ function NavigationBar(defaultTab) {
                         bg-blue-dianne
                         text-champagne
                         shadow-lg" data-collapse="true">
-           
-           <NavigationList/>
+                <NavigationList/>
         </div>
     );
 }
