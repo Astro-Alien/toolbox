@@ -8,11 +8,7 @@ function RouterControler() {
             <Routes>
                 {
                     Object.values(routes).map((route, index) => {
-                        const Component = lazy(() => {
-                            const moduleUrl = new URL(route.fixed_path, import.meta.url);
-                            return import(moduleUrl.href);
-                        }); 
-                        
+                        const Component = lazy(() => import(route.fixed_path));
                         return <Route key={index} path={route.path} element={<Component />} />;
                     })
                 }
