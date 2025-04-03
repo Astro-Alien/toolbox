@@ -2,19 +2,19 @@ export const routes = {
     home: {
         name: 'Home',
         path: '/',
-        fixed_path: './components/home-welcome/home-welcome.jsx',
+        fixed_path: './home-welcome/home-welcome.jsx',
         icon: 'FaHome' 
     },
     todoList: {
         name: 'Todo List',
         path: '/todo-list',
-        fixed_path: './components/todo-list/todo-list.jsx',
+        fixed_path: './todo-list/todo-list.jsx',
         icon: 'FaList'
     },
     virtualList: {
         name: 'Virtual List',
         path: '/virtual-list',
-        fixed_path: './components/virtual-list/virtual-list.jsx',
+        fixed_path: './virtual-list/virtual-list.jsx',
         icon: 'FaRegListAlt'
     }
 };
